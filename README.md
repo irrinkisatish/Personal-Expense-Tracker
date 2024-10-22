@@ -13,9 +13,7 @@ A RESTful API for managing personal financial records, where users can record th
 
 1. [Project Setup](#project-setup)
 2. [API Endpoints](#api-endpoints)
-3. [Examples](#examples)
-4. [Future Enhancements](#future-enhancements)
-5. [Postman Screenshots](#postman-screenshots)
+3. [Postman Screenshots](#postman-screenshots)
 
 ---
 
@@ -30,29 +28,30 @@ Ensure that you have Node.js installed. If you do not have Node.js, you can down
 1. Clone the repository:
    git clone https://github.com/yourusername/finance-api.git
 
-Navigate to the project directory:
+2. Navigate to the project directory:
 
-cd finance-api
+   cd finance-api
 
-Install the required dependencies:
+3. Install the required dependencies:
 
-npm install
+   npm install
+   
 Create the SQLite database schema (if using SQLite) by running the following command, or allow the program to automatically create the tables on the first run.
 
-Start the server:
-
-
-npm start
+4. Start the server:
+   npm start
+   
 The server will be running at http://localhost:3305.
 
-###API Endpoints
+### API Endpoints
 
 1. POST /transactions
+   
 Description: Adds a new transaction (either income or expense).
 Method: POST
 URL: /transactions
 
-Request Body:
+#### **Request Body**:
 
 {
   "type": "income",
@@ -62,7 +61,7 @@ Request Body:
   "description": "October salary"
 }
 
-Response:
+# Response:
 
 {
   "id": 1
@@ -74,7 +73,8 @@ Response:
 Description: Retrieves all transactions.
 Method: GET
 URL: /transactions
-Response:
+
+# Response:
 
 [
   {
@@ -86,11 +86,14 @@ Response:
     "description": "October salary"
   }
 ]
+
 3. GET /transactions/
+   
 Description: Retrieves a specific transaction by its ID.
 Method: GET
 URL: /transactions/:id
-Response:
+
+# Response:
 
 {
   "id": 1,
@@ -100,11 +103,14 @@ Response:
   "date": "2024-10-22",
   "description": "October salary"
 }
+
 4. PUT /transactions/
+
 Description: Updates an existing transaction by its ID.
 Method: PUT
 URL: /transactions/:id
-Request Body:
+
+# Request Body:
 
 {
   "type": "expense",
@@ -113,23 +119,27 @@ Request Body:
   "date": "2024-10-01",
   "description": "October rent"
 }
-Response:
+
+# Response:
 
 {
   "message": "Transaction updated successfully"
 }
+
 5. DELETE /transactions/
+
 Description: Deletes a transaction by its ID.
 Method: DELETE
 URL: /transactions/:id
 
-Response:
+# Response:
 
 {
   "message": "Transaction deleted successfully"
 }
 
 6. GET /summary
+
 Description: Retrieves a summary of income, expenses, and balance, optionally filtered by date range or category.
 Method: GET
 URL: /summary
@@ -137,10 +147,42 @@ Query Parameters:
 startDate (optional): Filter by start date.
 endDate (optional): Filter by end date.
 category (optional): Filter by category.
-Response:
+
+# Response:
 
 {
   "totalIncome": 3000.00,
   "totalExpense": 2000.00,
   "balance": 1000.00
 }
+
+### Postman Screenshots
+
+# 1. POST /transactions: Adds a new transaction (income or expense).
+
+ ![Screenshot 2024-10-22 194855](https://github.com/user-attachments/assets/283c9766-82a3-49ac-9758-9d939dcd3fe3)
+  
+
+# 2. GET /transactions: Retrieves all transactions.
+
+![Screenshot 2024-10-22 195019](https://github.com/user-attachments/assets/73a98762-1014-4e36-aedb-ef257543cecf)
+
+
+# 3. GET /transactions/:id: Retrieves a transaction by ID.
+
+![Screenshot 2024-10-22 195058](https://github.com/user-attachments/assets/9eb2547e-61b6-4a17-87b5-67f47a216adb)
+
+ 
+# 4. PUT /transactions/:id: Updates a transaction by ID.
+
+![Screenshot 2024-10-22 195238](https://github.com/user-attachments/assets/d58bf1b5-5bc1-4914-b402-fd1756cc5b6d)
+
+
+# 5.DELETE /transactions/:id: Deletes a transaction by ID.
+
+![Screenshot 2024-10-22 195327](https://github.com/user-attachments/assets/5a2f95d1-e1ed-4b54-a5bf-d25118122e1d)
+
+
+# 6. GET /summary: Retrieves a summary of transactions, such as total income, total expenses, and balance. Optionally, this can be filtered by date range or category.
+
+![Screenshot 2024-10-22 195431](https://github.com/user-attachments/assets/dc99d261-0124-45c0-b2eb-6aa3a999046b)

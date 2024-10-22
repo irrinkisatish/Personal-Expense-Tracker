@@ -30,16 +30,17 @@ Ensure that you have Node.js installed. If you do not have Node.js, you can down
    git clone https://github.com/irrinkisatish/Personal-Expense-Tracker.git
 
 3. Navigate to the project directory:
-
+    ```bash
    cd finance-api
 
 4. Install the required dependencies:
-
+    ```bash
    npm install
    
 Create the SQLite database schema (if using SQLite) by running the following command, or allow the program to automatically create the tables on the first run.
 
 4. Start the server:
+   ```bash
    npm start
    
 The server will be running at http://localhost:3305.
@@ -53,20 +54,21 @@ Method: POST
 URL: /transactions
 
 #### **Request Body**:
-
-{
-  "type": "income",
-  "category": "Salary",
-  "amount": 1500.00,
-  "date": "2024-10-22",
-  "description": "October salary"
-}
+    ```json
+    {
+    "type": "income",
+    "category": "Salary",
+    "amount": 1500.00,
+    "date": "2024-10-22",
+    "description": "October salary"
+    }
 
 # Response:
 
-{
-  "id": 1
-}
+    ```json
+    {
+     "id": 1
+    }
 
 
 2. GET /transactions
@@ -76,17 +78,17 @@ Method: GET
 URL: /transactions
 
 # Response:
-
-[
-  {
+    ```son
+     [
+      {
     "id": 1,
     "type": "income",
     "category": "Salary",
     "amount": 1500.00,
     "date": "2024-10-22",
     "description": "October salary"
-  }
-]
+    }
+    ]
 
 3. GET /transactions/
    
@@ -96,14 +98,15 @@ URL: /transactions/:id
 
 # Response:
 
-{
-  "id": 1,
-  "type": "income",
-  "category": "Salary",
-  "amount": 1500.00,
-  "date": "2024-10-22",
-  "description": "October salary"
-}
+    ```json
+     {
+     "id": 1,
+     "type": "income",
+     "category": "Salary",
+     "amount": 1500.00,
+     "date": "2024-10-22",
+     "description": "October salary"
+    }
 
 4. PUT /transactions/
 
@@ -112,20 +115,21 @@ Method: PUT
 URL: /transactions/:id
 
 # Request Body:
-
-{
-  "type": "expense",
-  "category": "Rent",
-  "amount": 800.00,
-  "date": "2024-10-01",
-  "description": "October rent"
-}
+     ``josn
+     {
+       "type": "expense",
+       "category": "Rent",
+      "amount": 800.00,
+      "date": "2024-10-01",
+     "description": "October rent"
+       }
 
 # Response:
 
-{
-  "message": "Transaction updated successfully"
-}
+    ```json
+    {
+      "message": "Transaction updated successfully"
+      }
 
 5. DELETE /transactions/
 
@@ -135,9 +139,10 @@ URL: /transactions/:id
 
 # Response:
 
-{
-  "message": "Transaction deleted successfully"
-}
+    ```json
+     {
+     "message": "Transaction deleted successfully"
+     }
 
 6. GET /summary
 
@@ -151,11 +156,12 @@ category (optional): Filter by category.
 
 # Response:
 
-{
-  "totalIncome": 3000.00,
-  "totalExpense": 2000.00,
-  "balance": 1000.00
-}
+    ```json
+      {
+        "totalIncome": 3000.00,
+         "totalExpense": 2000.00,
+          "balance": 1000.00
+        }
 
 ### Postman Screenshots
 

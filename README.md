@@ -26,13 +26,14 @@ Ensure that you have Node.js installed. If you do not have Node.js, you can down
 ### Steps to Run Locally
 
 1. Clone the repository:
-   gh repo clone irrinkisatish/Personal-Expense-Tracker
+   ```bash
+   git clone https://github.com/irrinkisatish/Personal-Expense-Tracker.git
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
 
    cd finance-api
 
-3. Install the required dependencies:
+4. Install the required dependencies:
 
    npm install
    
